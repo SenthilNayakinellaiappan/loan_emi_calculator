@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="container">
@@ -16,16 +16,27 @@
             <h2>EMI Calculator</h2>
             <div class="input-group">
                 <div class="input">
-                    <input type="text" id="loan-amount" placeholder="Loan Amount (Rs.)">
+                    <label for="loan-amount">Loan Amount (Rs.):</label>
+                    <input type="text" id="loan-amount">
                 </div>
                 <div class="input">
-                    <input type="text" id="loan-tenure-years" placeholder="Loan Tenure (Years)">
+                    <label for="loan-tenure-years">Loan Tenure (Years):</label>
+                    <input type="text" id="loan-tenure-years">
                 </div>
                 <div class="input">
-                    <input type="text" id="loan-tenure-months" placeholder="Loan Tenure (Months)">
+                    <label for="loan-tenure-months">Loan Tenure (Months):</label>
+                    <input type="text" id="loan-tenure-months">
                 </div>
                 <div class="input">
-                    <input type="text" id="loan-interest" placeholder="Interest Rate (%)">
+                    <label for="loan-interest">Interest Rate (%):</label>
+                    <input type="text" id="loan-interest">
+                </div>
+                <div class="input">
+                    <label for="emi-method">EMI Method:</label>
+                    <select id="emi-method">
+                        <option value="reducing">Reducing Balance Method</option>
+                        <option value="flat">Flat Rate Method</option>
+                    </select>
                 </div>
             </div>
             <div class="button">
@@ -42,8 +53,8 @@
             </div>
         </div>
         <div class="chart-container">
-            <canvas id="loanChart"></canvas>
-            <canvas id="balanceChart"></canvas> <!-- New canvas for the bar chart -->
+            <canvas id="loanChart" style="max-width: 600px; max-height: 400px;"></canvas>
+            <canvas id="balanceChart" style="max-width: 600px; max-height: 400px;"></canvas>
         </div>
     </div>
     <div class="table-container">
@@ -64,10 +75,9 @@
             </tbody>
         </table>
         <div id="screenshotBtnContainer">
-            <button id="screenshotBtn">Download</button>
+            <button id="screenshotBtn" onclick="downloadPDF()">Download</button>
         </div>
     </div>
     <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>

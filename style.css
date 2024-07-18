@@ -1,160 +1,104 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
-* {
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background-color: #f4f4f4;
 }
-
-body {
-    font-family: 'Poppins', sans-serif;
-}
-
 .container {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding-top: 20px;
-    height: 100%; /* Adjusted to accommodate the table */
-    background-color: #3598DB;
-    font-size: 1.2rem;
-    flex-wrap:wrap;
-    padding-bottom: 100px;
-    flex-direction: column;
-    align-items: center;
-}
-
-.main {
-    width: 350px;
-    background-color: #fff;
-    padding: 30px 30px;
-    border-radius: 10px;
-    margin-right: 200px;
-    position: relative;
-    margin-bottom: 100px;
-}
-
-h2 {
-    text-align: center;
-    font-weight: 600;
-}
-
-.input {
-    text-align: center;
-}
-
-.main input {
-    width: 200px;
-    height: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    border: 2px solid #ccc;
-    outline: none;
-    margin-top: 1rem;
-    font-size: 1rem;
-    padding: 10px 10px;
-    margin-right:30px;
 }
-
-.button {
+.main {
     text-align: center;
 }
-
-.main button {
+.input-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.input {
+    margin: 10px;
+}
+.input input, .input select {
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.button {
+    margin-top: 20px;
+}
+.button button {
+    padding: 10px 20px;
     border: none;
     background-color: #3598DB;
+    color: white;
     border-radius: 5px;
-    padding: 15px 15px;
-    color: #fff;
-    margin-top: 1rem;
-    font-size: 1.2rem;
-    width: 200px;
     cursor: pointer;
 }
-
+.button button:hover {
+    background-color: #2a78b2;
+}
 .error {
-    text-align: center;
-    background-color: #fedfe1;
-    color: #cd4243;
-    margin-top: 1rem;
-    padding: 15px 0px;
-    border-radius: 5px;
+    color: red;
+    display: none;
+    margin-top: 20px;
+}
+.result {
+    margin-top: 20px;
     display: none;
 }
-
-.result {
-    margin-top: 1rem;
-    font-size: 1rem;
+.result ul {
+    list-style-type: none;
+    padding: 0;
 }
-
-#loanChart {
-    width: 300px !important;
-    height: 300px !important;
+.result li {
+    margin: 10px 0;
 }
-
-
-ul {
-    background-color: #d6f0fd;
-    color: #44bef4;
-    padding: 10px 15px;
-    border-radius: 5px;
-}
-
-ul li {
-    list-style: none;
-}
-
 .chart-container {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 30px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
 }
-
+.chart-container canvas {
+    margin: 10px;
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+}
 .table-container {
-    margin: 20px auto;
-    width: 90%;
-    overflow-x: auto;
+    margin-top: 20px;
 }
-
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
-
 th, td {
-    padding: 10px;
     border: 1px solid #ddd;
-    text-align: center;
-    margin-top: 200px;
+    padding: 8px;
 }
-
 th {
-    background-color: #3598DB;
-    color: white;
-}
-
-td {
-    background-color: #fff;
+    background-color: #f2f2f2;
+    text-align: center;
 }
 #screenshotBtnContainer {
     text-align: center;
-    margin-top: 20px; /* Adjust margin as needed */
+    margin-top: 20px;
 }
-
-/* Adjusting button size */
 #screenshotBtn {
-    padding: 10px 20px; /* Adjust padding for height and width */
-    font-size: 16px; /* Adjust font size */
-    background-color: #ffff;
-    color: #3598DB;
+    padding: 10px 20px;
     border: none;
+    background-color: #3598DB;
+    color: white;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
-
 #screenshotBtn:hover {
-    background-color: #207ab4; /* Darker shade of primary color */
+    background-color: #2a78b2;
 }
